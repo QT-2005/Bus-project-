@@ -11,7 +11,7 @@ namespace BusTicketSystem.DAL
     {
         public List<Booking> GetAllBookings()
         {
-            using (var context = new BusTicketSystemDB())
+            using (var context = new Config.BusTicketSystemDB())
             {
                 return context.Bookings
                     .Include(b => b.Account)
@@ -23,7 +23,7 @@ namespace BusTicketSystem.DAL
 
         public Booking GetBookingById(int id)
         {
-            using (var context = new BusTicketSystemDB())
+            using (var context = new Config.BusTicketSystemDB())
             {
                 return context.Bookings
                     .Include(b => b.Account)
@@ -35,7 +35,7 @@ namespace BusTicketSystem.DAL
 
         public List<Booking> GetBookingsByAccountId(int accountId)
         {
-            using (var context = new BusTicketSystemDB())
+            using (var context = new Config.BusTicketSystemDB())
             {
                 return context.Bookings
                     .Include(b => b.Account)
@@ -48,7 +48,7 @@ namespace BusTicketSystem.DAL
 
         public List<Booking> GetBookingsByFilter(FilterBooking filter)
         {
-            using (var context = new BusTicketSystemDB())
+            using (var context = new Config.BusTicketSystemDB())
             {
                 var query = context.Bookings
                     .Include(b => b.Account)
@@ -92,7 +92,7 @@ namespace BusTicketSystem.DAL
 
         public List<string> GetBookedSeats(int busId, int routeId, DateTime travelDate)
         {
-            using (var context = new BusTicketSystemDB())
+            using (var context = new Config.BusTicketSystemDB())
             {
                 DateTime dateOnly = travelDate.Date;
                 DateTime nextDay = dateOnly.AddDays(1);
@@ -113,7 +113,7 @@ namespace BusTicketSystem.DAL
         {
             try
             {
-                using (var context = new BusTicketSystemDB())
+                using (var context = new Config.BusTicketSystemDB())
                 {
                     booking.BookingDate = DateTime.Now;
                     context.Bookings.Add(booking);
@@ -130,7 +130,7 @@ namespace BusTicketSystem.DAL
         {
             try
             {
-                using (var context = new BusTicketSystemDB())
+                using (var context = new Config.BusTicketSystemDB())
                 {
                     context.Entry(booking).State = EntityState.Modified;
                     return context.SaveChanges() > 0;
@@ -146,7 +146,7 @@ namespace BusTicketSystem.DAL
         {
             try
             {
-                using (var context = new BusTicketSystemDB())
+                using (var context = new Config.BusTicketSystemDB())
                 {
                     var booking = context.Bookings.Find(id);
                     if (booking != null)
@@ -167,7 +167,7 @@ namespace BusTicketSystem.DAL
         {
             try
             {
-                using (var context = new BusTicketSystemDB())
+                using (var context = new Config.BusTicketSystemDB())
                 {
                     var booking = context.Bookings.Find(id);
                     if (booking != null)

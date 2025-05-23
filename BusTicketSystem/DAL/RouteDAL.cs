@@ -10,7 +10,7 @@ namespace BusTicketSystem.DAL
     {
         public List<Route> GetAllRoutes()
         {
-            using (var context = new BusTicketSystemDB())
+            using (var context = new Config.BusTicketSystemDB())
             {
                 return context.Routes.ToList();
             }
@@ -18,7 +18,7 @@ namespace BusTicketSystem.DAL
 
         public List<Route> GetActiveRoutes()
         {
-            using (var context = new BusTicketSystemDB())
+            using (var context = new Config.BusTicketSystemDB())
             {
                 return context.Routes.Where(r => r.IsActive).ToList();
             }
@@ -26,7 +26,7 @@ namespace BusTicketSystem.DAL
 
         public Route GetRouteById(int id)
         {
-            using (var context = new BusTicketSystemDB())
+            using (var context = new Config.BusTicketSystemDB())
             {
                 return context.Routes.Find(id);
             }
@@ -34,7 +34,7 @@ namespace BusTicketSystem.DAL
 
         public List<Route> GetRoutesByFilter(FilterRoute filter)
         {
-            using (var context = new BusTicketSystemDB())
+            using (var context = new Config.BusTicketSystemDB())
             {
                 var query = context.Routes.AsQueryable();
 
@@ -59,7 +59,7 @@ namespace BusTicketSystem.DAL
 
         public List<Route> GetRoutesByBusId(int busId)
         {
-            using (var context = new BusTicketSystemDB())
+            using (var context = new Config.BusTicketSystemDB())
             {
                 return context.Buses
                     .Include(b => b.Routes)
@@ -71,7 +71,7 @@ namespace BusTicketSystem.DAL
         {
             try
             {
-                using (var context = new BusTicketSystemDB())
+                using (var context = new Config.BusTicketSystemDB())
                 {
                     context.Routes.Add(route);
                     return context.SaveChanges() > 0;
@@ -87,7 +87,7 @@ namespace BusTicketSystem.DAL
         {
             try
             {
-                using (var context = new BusTicketSystemDB())
+                using (var context = new Config.BusTicketSystemDB())
                 {
                     context.Entry(route).State = EntityState.Modified;
                     return context.SaveChanges() > 0;
@@ -103,7 +103,7 @@ namespace BusTicketSystem.DAL
         {
             try
             {
-                using (var context = new BusTicketSystemDB())
+                using (var context = new Config.BusTicketSystemDB())
                 {
                     var route = context.Routes.Find(id);
                     if (route != null)

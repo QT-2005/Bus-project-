@@ -12,7 +12,7 @@ namespace BusTicketSystem.DAL
     {
         public Account GetAccountByUsername(string username)
         {
-            using (var context = new BusTicketSystemDB())
+            using (var context = new Config.BusTicketSystemDB())
             {
                 return context.Accounts
                     .FirstOrDefault(a => a.Username == username);
@@ -21,7 +21,7 @@ namespace BusTicketSystem.DAL
 
         public List<Account> GetAllAccounts()
         {
-            using (var context = new BusTicketSystemDB())
+            using (var context = new Config.BusTicketSystemDB())
             {
                 return context.Accounts.ToList();
             }
@@ -29,7 +29,7 @@ namespace BusTicketSystem.DAL
 
         public List<Account> GetAccountsByFilter(FilterAccount filter)
         {
-            using (var context = new BusTicketSystemDB())
+            using (var context = new Config.BusTicketSystemDB())
             {
                 var query = context.Accounts.AsQueryable();
 
@@ -66,7 +66,7 @@ namespace BusTicketSystem.DAL
         {
             try
             {
-                using (var context = new BusTicketSystemDB())
+                using (var context = new Config.BusTicketSystemDB())
                 {
                     account.CreatedDate = DateTime.Now;
                     context.Accounts.Add(account);
@@ -83,7 +83,7 @@ namespace BusTicketSystem.DAL
         {
             try
             {
-                using (var context = new BusTicketSystemDB())
+                using (var context = new Config.BusTicketSystemDB())
                 {
                     context.Entry(account).State = EntityState.Modified;
                     return context.SaveChanges() > 0;
@@ -99,7 +99,7 @@ namespace BusTicketSystem.DAL
         {
             try
             {
-                using (var context = new BusTicketSystemDB())
+                using (var context = new Config.BusTicketSystemDB())
                 {
                     var account = context.Accounts.Find(id);
                     if (account != null)

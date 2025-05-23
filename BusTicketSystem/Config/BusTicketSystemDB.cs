@@ -1,16 +1,14 @@
-﻿using BusTicketSystem.DTO;
+using BusTicketSystem.DTO;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Runtime.Remoting.Contexts;
-using System.Security.Principal;
+using System.Linq;
 using static BusTicketSystem.Config.DBInitialize;
 
 namespace BusTicketSystem.Config
 {
     public class BusTicketSystemDB : DbContext
     {
-        public BusTicketSystemDB() : base("name=BusTicketSystemContext")
+        public BusTicketSystemDB() : base("name=BusTicketSystemDB")
         {
             Console.WriteLine("Connection string:");
             Console.WriteLine(this.Database.Connection.ConnectionString);

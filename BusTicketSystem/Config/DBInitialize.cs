@@ -1,7 +1,10 @@
 ﻿using BusTicketSystem.DTO;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
-using System.Security.Principal;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace BusTicketSystem.Config
 {

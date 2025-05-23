@@ -38,11 +38,27 @@ namespace BusTicketSystem.GUI
                               !string.IsNullOrWhiteSpace(txtPassword.Text);
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            // Close the application
+            Application.Exit();
+        }
+
+        private void lblUsername_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text;
-
+            Console.WriteLine("Click");
             // Validate input
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
@@ -90,22 +106,6 @@ namespace BusTicketSystem.GUI
                 MessageBox.Show($"An error occurred: {ex.Message}", "Login Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            // Close the application
-            Application.Exit();
-        }
-
-        private void lblUsername_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
