@@ -211,22 +211,7 @@ namespace BusTicketSystem.GUI
             }
         }
 
-        private void dgvBookings_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Check if a button cell was clicked
-            if (e.RowIndex >= 0 && e.ColumnIndex == dgvBookings.Columns.Count - 1) // View Details button
-            {
-                // Get the booking ID from the selected row
-                int bookingId = Convert.ToInt32(dgvBookings.Rows[e.RowIndex].Cells["Id"].Value);
-
-                // Find the booking in our list
-                var booking = _bookings.FirstOrDefault(b => b.Id == bookingId);
-                if (booking == null) return;
-
-                // Show booking details
-                ShowBookingDetails(booking);
-            }
-        }
+       
 
         private void ShowBookingDetails(Booking booking)
         {
@@ -272,6 +257,23 @@ namespace BusTicketSystem.GUI
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvBookings_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            // Check if a button cell was clicked
+            if (e.RowIndex >= 0 && e.ColumnIndex == dgvBookings.Columns.Count - 1) // View Details button
+            {
+                // Get the booking ID from the selected row
+                int bookingId = Convert.ToInt32(dgvBookings.Rows[e.RowIndex].Cells["Id"].Value);
+
+                // Find the booking in our list
+                var booking = _bookings.FirstOrDefault(b => b.Id == bookingId);
+                if (booking == null) return;
+
+                // Show booking details
+                ShowBookingDetails(booking);
+            }
         }
     }
 }

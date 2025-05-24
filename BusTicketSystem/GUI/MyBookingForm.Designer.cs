@@ -45,6 +45,7 @@
             this.btnDelete.TabIndex = 16;
             this.btnDelete.Text = "Delete Selected Booking";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // button1
             // 
@@ -56,6 +57,7 @@
             this.button1.TabIndex = 15;
             this.button1.Text = "Refresh";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dgvBookings
             // 
@@ -75,6 +77,7 @@
             this.dgvBookings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBookings.Size = new System.Drawing.Size(880, 358);
             this.dgvBookings.TabIndex = 14;
+            this.dgvBookings.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBookings_CellContentClick);
             // 
             // label1
             // 

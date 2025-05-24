@@ -75,8 +75,9 @@
             // myBookingsToolStripMenuItem
             // 
             this.myBookingsToolStripMenuItem.Name = "myBookingsToolStripMenuItem";
-            this.myBookingsToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
+            this.myBookingsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.myBookingsToolStripMenuItem.Text = "ManageBooking";
+            this.myBookingsToolStripMenuItem.Click += new System.EventHandler(this.myBookingsToolStripMenuItem_Click);
             // 
             // systemToolStripMenuItem
             // 
@@ -90,14 +91,16 @@
             // changePasswordToolStripMenuItem
             // 
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // statusStrip
             // 

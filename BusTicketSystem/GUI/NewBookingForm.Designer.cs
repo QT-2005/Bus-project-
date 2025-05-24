@@ -75,6 +75,7 @@
             this.cmbRoute.Name = "cmbRoute";
             this.cmbRoute.Size = new System.Drawing.Size(332, 24);
             this.cmbRoute.TabIndex = 32;
+            this.cmbRoute.SelectedIndexChanged += new System.EventHandler(this.cmbRoute_SelectedIndexChanged);
             // 
             // lblBus
             // 
@@ -95,6 +96,7 @@
             this.cmbBus.Name = "cmbBus";
             this.cmbBus.Size = new System.Drawing.Size(332, 24);
             this.cmbBus.TabIndex = 34;
+            this.cmbBus.SelectedIndexChanged += new System.EventHandler(this.cmbBus_SelectedIndexChanged);
             // 
             // lblTravelDate
             // 
@@ -115,6 +117,7 @@
             this.dtpTravelDate.Name = "dtpTravelDate";
             this.dtpTravelDate.Size = new System.Drawing.Size(159, 22);
             this.dtpTravelDate.TabIndex = 36;
+            this.dtpTravelDate.ValueChanged += new System.EventHandler(this.dtpTravelDate_ValueChanged);
             // 
             // lblSeatSelection
             // 
@@ -135,6 +138,7 @@
             this.pnlSeats.Name = "pnlSeats";
             this.pnlSeats.Size = new System.Drawing.Size(752, 332);
             this.pnlSeats.TabIndex = 38;
+            this.pnlSeats.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSeats_Paint);
             // 
             // lblSelectedSeat
             // 
@@ -154,6 +158,7 @@
             this.txtSelectedSeat.ReadOnly = true;
             this.txtSelectedSeat.Size = new System.Drawing.Size(132, 22);
             this.txtSelectedSeat.TabIndex = 40;
+            this.txtSelectedSeat.TextChanged += new System.EventHandler(this.txtSelectedSeat_TextChanged);
             // 
             // lblPrice
             // 
@@ -173,6 +178,7 @@
             this.txtPrice.ReadOnly = true;
             this.txtPrice.Size = new System.Drawing.Size(132, 22);
             this.txtPrice.TabIndex = 42;
+            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
             // 
             // btnBook
             // 
@@ -183,6 +189,7 @@
             this.btnBook.TabIndex = 43;
             this.btnBook.Text = "Book Ticket";
             this.btnBook.UseVisualStyleBackColor = true;
+            this.btnBook.TextChanged += new System.EventHandler(this.btnBook_Click);
             // 
             // btnCancel
             // 
@@ -193,6 +200,7 @@
             this.btnCancel.TabIndex = 44;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.TextChanged += new System.EventHandler(this.btnCancel_Click);
             // 
             // NewBookingForm
             // 
